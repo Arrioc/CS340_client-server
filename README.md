@@ -8,6 +8,7 @@ As a newly hired software developer for a startup business, my job is to assess 
 Additionally, I’ve chosen to use a distributed database (NoSQL/non-relational) called MongoDB since the company has professed to have future goals for securities other than company stock and also because of its driver API’s versatility in various languages. For this project I’ve chosen Python, version 2.7.6.  The RESTful API is a part of popular application server frameworks; thus developers only need to test and code uniform resource identifiers (URI’s) and locators (URLs) which are paths that allow for high level functionality using an HTTP connection. For the project we will use client side URL’s or CURLS.
 
 Collection Management
+
 The first step in collection management is to create a database using the Mongo import tool. Here I create a database which holds collections of data. Note that we can have more than one collection in our database. Here I’ve taken the data provided me by the company and inserted it into an active directory named ‘datasets’ with a database named ‘market’ with a collection named ‘stocks’. The terminal then confirms that 6,756 objects (documents) were successfully imported. Each document stores a set of data for a particular company. 
  
 After assessing the data and the functionality I would like to implement, I decided to create several indexes for the database which will take advantage of what a distributed database is capable of. Traditional SQL relational databases hold your data in a table with rows and columns which require you to perform table-scans to store, retrieve, update, and delete the data within. Table scans require you to search the entire database which becomes tedious and slow as your database grows. 
@@ -23,6 +24,7 @@ The field ‘ticker’ is an acronym for company names in the collection. I deci
 Lastly, I created a compound index for a program I made which can find a document that matches a user defined industry and returns a list of ticker symbols (later described). A compound index will index more than one field. Now we can limit the search of the entire database (6,756 documents) by more than one factor, selecting first only the matching user’s industry, and then selecting only the ticker fields of those industries to present to the user with no need to scan the entire document for the tickers. 
 
 Document Manipulation
+
 Now on to the fun stuff. The following programs were designed to be modular, or in other words, reusable as well as improvable. They are reusable in that entries can be inputted by users in real-time, they do not contain hard-coded user options. These program’s abilities are only limited by the imagination. In any of the programs you could add or remove key fields (meaning the first entry in a document’s listing- which are all presented as key/values and their possible subdocument key/values and which we can also reach onto using MongoDB), and any of these key fields could be a user defined entry. In this way, the possibility for improvements, or more complex reads, writes, and other database manipulations are endless.
  
 An example of only 3 of the 66 possible key/values available in each document
@@ -55,6 +57,7 @@ If the program is successfully deleted, the user will be informed. They will als
 The user will also be told if their formatting was bad.
  
 Document Retrieval
+
 The following program is a good example of a program that did not require an index, because it needed to scan the entire collection to capably carry out its work. This program reads from files and presents data to the user. Specifically, it takes a high and low user-defined number and returns to the user a count of all “50-Day Simple Moving Average” results that are between the high and low number.
  
 Additionally, the program informs the user if their entry was wrongly formatted.
