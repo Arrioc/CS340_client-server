@@ -101,7 +101,7 @@ Next, we have delete functionality, that takes a user curl and extracts the tick
 Next we have simple’ read’ functionality which will query the given file.. The user enters a ticker to read a file by the ticker name, and their results are returned.  
 Here the file is read, and then I delete the file, to show that next time we read we get an error that there was “No File Found With That Criteria”.
 
-The limits of what’s possible with the REST API and MongoDB are that of user imagination. I would highly recommend that your knowledgeable sock experts communicate their ideas about what they would like to see implemented into the system. For now, I have a few mock example queries they can study to get some ideas about what’s possible.  
+The limits of what’s possible with the REST API and MongoDB are that of user imagination. I would highly recommend that your knowledgeable stock experts communicate their ideas about what they would like to see implemented into the system. For now, I have a few mock example queries they can study to get some ideas about what’s possible.  
 First is a simple query that selects and presents specific stock summary information from a user-derived list of ticker symbols. In this query we create a stock report for the list of user ticker symbols using the data provided by the request in the curl.
  
 Note that the in curl there is an array of tickers within it: {“array” : [“AA”, “BA”, “T”]}. Execution prints a big block of code that we can beautify into whatever look you may want.
